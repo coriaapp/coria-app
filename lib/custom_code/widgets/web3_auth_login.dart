@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 
 import 'index.dart'; // Imports other custom widgets
 
+import 'index.dart'; // Imports other custom widgets
+
 import 'package:web3auth_flutter/web3auth_flutter.dart';
 
 import 'dart:collection';
@@ -73,7 +75,8 @@ class _Web3AuthLoginState extends State<Web3AuthLogin> {
     return () async {
       try {
         final Web3AuthResponse response = await method();
-        print(response);
+        print(response.userInfo);
+        FFAppState().userinfo = response.userInfo;
       } on UserCancelledException {
         print("User cancelled.");
       } on UnKnownException {
@@ -98,8 +101,6 @@ class _Web3AuthLoginState extends State<Web3AuthLogin> {
     return () async {
       try {
         final dynamic? response = await Web3AuthFlutter.getPrivKey();
-
-        FFAppState().userinfo = response.userInfo;
       } on UserCancelledException {
         print("User cancelled.");
       } on UnKnownException {

@@ -35,7 +35,8 @@ class FFAppState extends ChangeNotifier {
 
   late FlutterSecureStorage secureStorage;
 
-  dynamic _userinfo;
+  dynamic _userinfo = jsonDecode(
+      '{\"email\":\"test@gmail.com\",\"name\":\"Test Value\",\"profileImage\":\"https://lh3.googleusercontent.com/a/AAcHTtezhhBAOm0Pan6B8T71Yudkok6cwCilKnEHRK51S-G_=s96-c\",\"verifier\":\"torus\",\"verifierId\":\"test@gmail.com\",\"typeOfLogin\":\"google\"}');
   dynamic get userinfo => _userinfo;
   set userinfo(dynamic _value) {
     _userinfo = _value;

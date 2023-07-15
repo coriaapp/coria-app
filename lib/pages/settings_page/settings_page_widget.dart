@@ -180,7 +180,13 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                             alignment:
                                                 AlignmentDirectional(0.0, 0.0),
                                             child: Text(
-                                              'ryan@gmail.com',
+                                              valueOrDefault<String>(
+                                                getJsonField(
+                                                  FFAppState().userinfo,
+                                                  r'''$.email''',
+                                                ).toString(),
+                                                'ryan@gmail.com',
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
