@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
 import 'index.dart'; // Imports other custom widgets
-
-import 'index.dart'; // Imports other custom widgets
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 
 import 'package:web3auth_flutter/web3auth_flutter.dart';
 
@@ -65,9 +65,69 @@ class _Web3AuthLoginState extends State<Web3AuthLogin> {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      ElevatedButton(
-          onPressed: _login(_withGoogle), child: const Text('Google')),
-      ElevatedButton(onPressed: _login(_withApple), child: const Text('Apple')),
+      Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 16.0),
+        child: FFButtonWidget(
+          onPressed: (_login(_withGoogle)),
+          text: 'Sign in with Google',
+          icon: FaIcon(
+            FontAwesomeIcons.google,
+            color: FlutterFlowTheme.of(context).primaryText,
+            size: 20.0,
+          ),
+          options: FFButtonOptions(
+            width: double.infinity,
+            height: 60.0,
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+            color: FlutterFlowTheme.of(context).secondaryBackground,
+            textStyle: FlutterFlowTheme.of(context).titleLarge.override(
+                  fontFamily: 'DM Sans',
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w600,
+                ),
+            elevation: 0.0,
+            borderSide: BorderSide(
+              color: FlutterFlowTheme.of(context).tertiary,
+              width: 2.0,
+            ),
+            borderRadius: BorderRadius.circular(50.0),
+            hoverColor: FlutterFlowTheme.of(context).alternate,
+            hoverTextColor: FlutterFlowTheme.of(context).primary,
+          ),
+        ),
+      ),
+      Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 16.0),
+        child: FFButtonWidget(
+          onPressed: (_login(_withApple)),
+          text: 'Sign in with Apple',
+          icon: Icon(
+            Icons.apple,
+            color: FlutterFlowTheme.of(context).primaryText,
+            size: 20.0,
+          ),
+          options: FFButtonOptions(
+            width: double.infinity,
+            height: 60.0,
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+            iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+            color: FlutterFlowTheme.of(context).secondaryBackground,
+            textStyle: FlutterFlowTheme.of(context).titleLarge.override(
+                  fontFamily: 'DM Sans',
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w600,
+                ),
+            elevation: 0.0,
+            borderSide: BorderSide(
+              color: FlutterFlowTheme.of(context).tertiary,
+              width: 2.0,
+            ),
+            borderRadius: BorderRadius.circular(50.0),
+            hoverColor: FlutterFlowTheme.of(context).primary,
+          ),
+        ),
+      ),
     ]);
   }
 
@@ -78,7 +138,7 @@ class _Web3AuthLoginState extends State<Web3AuthLogin> {
         print(response.userInfo);
         FFAppState().userinfo = response.userInfo;
 
-        FFAppState().isLoggedIn = True;
+        FFAppState().isLoggedIn = true;
       } on UserCancelledException {
         print("User cancelled.");
       } on UnKnownException {
