@@ -93,7 +93,10 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                   fontSize: 35.0,
                                   fontWeight: FontWeight.normal,
                                 ),
-                            colors: [],
+                            colors: [
+                              FlutterFlowTheme.of(context).accent1,
+                              FlutterFlowTheme.of(context).accent1
+                            ],
                             gradientDirection: GradientDirection.ltr,
                             gradientType: GradientType.linear,
                           ),
