@@ -576,8 +576,8 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                         padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 16.0, 16.0),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            context.pushNamed('PhotosPage');
                           },
                           text: 'Sign in with Google',
                           icon: FaIcon(
