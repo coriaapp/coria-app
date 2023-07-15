@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -70,7 +71,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                         Align(
                           alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Text(
-                            'Good Morning',
+                            'Good Morning,',
                             textAlign: TextAlign.start,
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
@@ -83,7 +84,13 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                         Align(
                           alignment: AlignmentDirectional(-1.0, 0.0),
                           child: GradientText(
-                            'Ryan',
+                            valueOrDefault<String>(
+                              getJsonField(
+                                FFAppState().userinfo,
+                                r'''$.name''',
+                              ).toString(),
+                              'Ryan',
+                            ),
                             textAlign: TextAlign.start,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -130,14 +137,16 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(-1.0, -1.0),
-                                        child: Icon(
-                                          Icons.face_3_sharp,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          size: 50.0,
+                                      Container(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Image.network(
+                                          'https://img.freepik.com/free-photo/close-up-handsome-young-man-laughing-wearing-casual-clothes-standing-blue-background_1258-73371.jpg?w=2000&t=st=1689420744~exp=1689421344~hmac=250397812ae4013af0bae15ac7b4cc1f3b969cc9bc8c91230c154ed4fa17625a',
+                                          fit: BoxFit.cover,
                                         ),
                                       ),
                                     ],
@@ -414,28 +423,17 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                                           Container(
                                                             width: 40.0,
                                                             height: 40.0,
+                                                            clipBehavior:
+                                                                Clip.antiAlias,
                                                             decoration:
                                                                 BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondary,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          50.0),
+                                                              shape: BoxShape
+                                                                  .circle,
                                                             ),
-                                                            child: Align(
-                                                              alignment:
-                                                                  AlignmentDirectional(
-                                                                      0.0, 0.0),
-                                                              child: Icon(
-                                                                Icons
-                                                                    .security_rounded,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                size: 24.0,
-                                                              ),
+                                                            child: SvgPicture
+                                                                .network(
+                                                              'https://web3auth.io/images/w3a-L-Favicon-1.svg',
+                                                              fit: BoxFit.cover,
                                                             ),
                                                           ),
                                                         ],
@@ -464,7 +462,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                                                         0.0,
                                                                         0.0),
                                                                 child: Text(
-                                                                  'Security',
+                                                                  'Logout',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium

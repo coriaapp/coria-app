@@ -43,7 +43,8 @@
 	<true/>
 
 
-
+	<key>NSPhotoLibraryUsageDescription</key>
+    <string>Coria requires permission to view your media for backup and sync.</string>
 
 
 	<key>UILaunchStoryboardName</key>

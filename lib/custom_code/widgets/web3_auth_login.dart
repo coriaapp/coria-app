@@ -77,6 +77,8 @@ class _Web3AuthLoginState extends State<Web3AuthLogin> {
         final Web3AuthResponse response = await method();
         print(response.userInfo);
         FFAppState().userinfo = response.userInfo;
+
+        FFAppState().isLoggedIn = True;
       } on UserCancelledException {
         print("User cancelled.");
       } on UnKnownException {

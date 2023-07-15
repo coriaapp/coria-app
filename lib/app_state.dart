@@ -26,6 +26,9 @@ class FFAppState extends ChangeNotifier {
         }
       }
     });
+    await _safeInitAsync(() async {
+      _isLoggedIn = await secureStorage.getBool('ff_isLoggedIn') ?? _isLoggedIn;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -45,6 +48,17 @@ class FFAppState extends ChangeNotifier {
 
   void deleteUserinfo() {
     secureStorage.delete(key: 'ff_userinfo');
+  }
+
+  bool _isLoggedIn = false;
+  bool get isLoggedIn => _isLoggedIn;
+  set isLoggedIn(bool _value) {
+    _isLoggedIn = _value;
+    secureStorage.setBool('ff_isLoggedIn', _value);
+  }
+
+  void deleteIsLoggedIn() {
+    secureStorage.delete(key: 'ff_isLoggedIn');
   }
 }
 

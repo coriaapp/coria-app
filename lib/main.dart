@@ -128,7 +128,7 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: FaIcon(
               FontAwesomeIcons.home,
-              size: 24.0,
+              size: 20.0,
             ),
             label: 'Home',
             tooltip: '',
@@ -136,15 +136,15 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: FaIcon(
               FontAwesomeIcons.userAlt,
-              size: 22.0,
+              size: 20.0,
             ),
             label: 'Home',
             tooltip: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home_outlined,
-              size: 24.0,
+            icon: FaIcon(
+              FontAwesomeIcons.allergies,
+              size: 20.0,
             ),
             label: 'Home',
             tooltip: '',
