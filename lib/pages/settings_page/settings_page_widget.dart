@@ -156,7 +156,13 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 3.0),
                                             child: Text(
-                                              'Ryan Black',
+                                              valueOrDefault<String>(
+                                                getJsonField(
+                                                  FFAppState().userinfo,
+                                                  r'''$.name''',
+                                                ).toString(),
+                                                'Ryan Black',
+                                              ),
                                               textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.of(
                                                       context)

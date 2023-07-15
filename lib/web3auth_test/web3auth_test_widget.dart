@@ -63,10 +63,10 @@ class _Web3authTestWidgetState extends State<Web3authTestWidget> {
             children: [
               Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
-                height: MediaQuery.sizeOf(context).height * 0.8,
+                height: MediaQuery.sizeOf(context).height * 0.5,
                 child: custom_widgets.Web3AuthLogin(
                   width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: MediaQuery.sizeOf(context).height * 0.8,
+                  height: MediaQuery.sizeOf(context).height * 0.5,
                 ),
               ),
             ],
