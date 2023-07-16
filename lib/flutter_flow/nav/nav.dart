@@ -66,6 +66,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Onboarding',
           path: '/onboarding',
           builder: (context, params) => OnboardingWidget(),
+        ),
+        FFRoute(
+          name: 'StorageInfo',
+          path: '/storageInfo',
+          builder: (context, params) => StorageInfoWidget(),
+        ),
+        FFRoute(
+          name: 'Photos',
+          path: '/photos',
+          builder: (context, params) => PhotosWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

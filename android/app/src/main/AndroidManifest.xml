@@ -46,7 +46,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="coria" android:host="coria.com" />
+                <data android:scheme="coria" android:host="com.coria" />
             </intent-filter>
 
         </activity>

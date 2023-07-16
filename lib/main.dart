@@ -130,7 +130,7 @@ class _NavBarPageState extends State<NavBarPage> {
               FontAwesomeIcons.home,
               size: 20.0,
             ),
-            label: 'Home',
+            label: 'Library',
             tooltip: '',
           ),
           BottomNavigationBarItem(
