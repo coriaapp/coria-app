@@ -216,13 +216,6 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => OnboardingModel());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (FFAppState().isLoggedIn) {
-        context.goNamed('PhotosPage');
-      }
-    });
   }
 
   @override

@@ -1,5 +1,4 @@
 // Automatic FlutterFlow imports
-import '/actions/actions.dart' as action_blocks;
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'index.dart'; // Imports other custom widgets
@@ -138,8 +137,8 @@ class _Web3AuthLoginState extends State<Web3AuthLogin> {
         final Web3AuthResponse response = await method();
         print(response.userInfo);
         FFAppState().userinfo = response.userInfo;
-
         FFAppState().isLoggedIn = true;
+        context.goNamed('PhotosPage');
       } on UserCancelledException {
         print("User cancelled.");
       } on UnKnownException {

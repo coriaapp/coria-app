@@ -499,8 +499,16 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                               ),
                                               FFButtonWidget(
                                                 onPressed: () async {
-                                                  await actions
-                                                      .logoutWeb3Auth();
+                                                  if (FFAppState().isLoggedIn) {
+                                                    await actions
+                                                        .logoutWeb3Auth();
+
+                                                    context
+                                                        .goNamed('Onboarding');
+                                                  } else {
+                                                    context
+                                                        .goNamed('Onboarding');
+                                                  }
                                                 },
                                                 text: 'Button',
                                                 options: FFButtonOptions(
