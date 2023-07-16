@@ -135,8 +135,8 @@ class _Web3AuthLoginState extends State<Web3AuthLogin> {
     return () async {
       try {
         final Web3AuthResponse response = await method();
-        print(response.userInfo);
-        FFAppState().userinfo = response.userInfo;
+        print("User logged in.");
+        FFAppState().userinfo = jsonDecode(jsonEncode(response.userInfo));
         FFAppState().isLoggedIn = true;
         context.goNamed('PhotosPage');
       } on UserCancelledException {

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'settings_page_model.dart';
@@ -58,7 +59,7 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  height: MediaQuery.sizeOf(context).height * 0.15,
+                  height: MediaQuery.sizeOf(context).height * 0.16,
                   decoration: BoxDecoration(
                     color: Color(0x00FFFFFF),
                     borderRadius: BorderRadius.circular(0.0),
@@ -274,6 +275,39 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                           ),
                                           child: Stack(
                                             children: [
+                                              FFButtonWidget(
+                                                onPressed: () async {
+                                                  context
+                                                      .pushNamed('StorageInfo');
+                                                },
+                                                text: '',
+                                                options: FFButtonOptions(
+                                                  width: double.infinity,
+                                                  height: double.infinity,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall,
+                                                  elevation: 3.0,
+                                                  borderSide: BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          40.0),
+                                                ),
+                                              ),
                                               Align(
                                                 alignment: AlignmentDirectional(
                                                     0.0, 0.0),
@@ -336,45 +370,80 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                                             CrossAxisAlignment
                                                                 .center,
                                                         children: [
-                                                          Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              Align(
-                                                                alignment:
-                                                                    AlignmentDirectional(
-                                                                        0.0,
-                                                                        0.0),
-                                                                child: Text(
-                                                                  'Storage',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Readex Pro',
-                                                                        fontWeight:
-                                                                            FontWeight.w300,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
                                                           Align(
                                                             alignment:
                                                                 AlignmentDirectional(
                                                                     0.0, 0.0),
-                                                            child: FaIcon(
-                                                              FontAwesomeIcons
-                                                                  .arrowRight,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryText,
-                                                              size: 14.0,
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0),
+                                                                    child: Text(
+                                                                      '120GB of 1TB',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Readex Pro',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryText,
+                                                                            fontSize:
+                                                                                12.0,
+                                                                            fontWeight:
+                                                                                FontWeight.normal,
+                                                                          ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      LinearPercentIndicator(
+                                                                    percent:
+                                                                        0.42,
+                                                                    width: MediaQuery.sizeOf(context)
+                                                                            .width *
+                                                                        0.4,
+                                                                    lineHeight:
+                                                                        4.0,
+                                                                    animation:
+                                                                        true,
+                                                                    progressColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .accent1,
+                                                                    backgroundColor:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .tertiary,
+                                                                    barRadius: Radius
+                                                                        .circular(
+                                                                            10.0),
+                                                                    padding:
+                                                                        EdgeInsets
+                                                                            .zero,
+                                                                  ),
+                                                                ),
+                                                              ],
                                                             ),
                                                           ),
                                                         ],
@@ -404,6 +473,47 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                           ),
                                           child: Stack(
                                             children: [
+                                              FFButtonWidget(
+                                                onPressed: () async {
+                                                  if (FFAppState().isLoggedIn) {
+                                                    await actions
+                                                        .logoutWeb3Auth();
+
+                                                    context.pushNamed(
+                                                        'Onboarding');
+                                                  } else {
+                                                    context.pushNamed(
+                                                        'Onboarding');
+                                                  }
+                                                },
+                                                text: '',
+                                                options: FFButtonOptions(
+                                                  width: double.infinity,
+                                                  height: double.infinity,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall,
+                                                  elevation: 3.0,
+                                                  borderSide: BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          40.0),
+                                                ),
+                                              ),
                                               Align(
                                                 alignment: AlignmentDirectional(
                                                     0.0, 0.0),
@@ -495,52 +605,6 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                                       ),
                                                     ],
                                                   ),
-                                                ),
-                                              ),
-                                              FFButtonWidget(
-                                                onPressed: () async {
-                                                  if (FFAppState().isLoggedIn) {
-                                                    await actions
-                                                        .logoutWeb3Auth();
-
-                                                    context
-                                                        .goNamed('Onboarding');
-                                                  } else {
-                                                    context
-                                                        .goNamed('Onboarding');
-                                                  }
-                                                },
-                                                text: 'Button',
-                                                options: FFButtonOptions(
-                                                  width: double.infinity,
-                                                  height: double.infinity,
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 0.0),
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Readex Pro',
-                                                            color: Colors.white,
-                                                          ),
-                                                  elevation: 3.0,
-                                                  borderSide: BorderSide(
-                                                    color: Colors.transparent,
-                                                    width: 1.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
                                                 ),
                                               ),
                                             ],
