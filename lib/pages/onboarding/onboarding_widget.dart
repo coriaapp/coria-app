@@ -220,7 +220,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (FFAppState().isLoggedIn) {
-        context.pushNamed('PhotosPage');
+        context.goNamed('PhotosPage');
       }
     });
   }
@@ -574,10 +574,10 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                       Expanded(
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: MediaQuery.sizeOf(context).height * 1.0,
+                          height: MediaQuery.sizeOf(context).height * 0.8,
                           child: custom_widgets.Web3AuthLogin(
                             width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: MediaQuery.sizeOf(context).height * 1.0,
+                            height: MediaQuery.sizeOf(context).height * 0.8,
                           ),
                         ),
                       ),
