@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'backend/supabase/supabase.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:csv/csv.dart';
 import 'package:synchronized/synchronized.dart';

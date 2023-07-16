@@ -435,7 +435,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          'Own Your Memories',
+                                          'Own your memories',
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .displaySmall
@@ -450,7 +450,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: Text(
-                                            'I have some great food options here!! Yum yum!!',
+                                            'Secure your photos and videos with Coria.',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge,
@@ -469,7 +469,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          'Awesome Recipes',
+                                          'Your data is yours',
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .displaySmall
@@ -484,7 +484,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: Text(
-                                            'I have some great food options here!! Yum yum!!',
+                                            'Your data is encrypted end-to-end, so only you can access it.',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge,
@@ -503,7 +503,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          'Personalized recipe discovery',
+                                          'Always available',
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .displaySmall
@@ -518,7 +518,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: Text(
-                                            'I have some great food options here!! Yum yum!!',
+                                            'Your files are stored on multiple devices, so they are always there when you need them.',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge,
