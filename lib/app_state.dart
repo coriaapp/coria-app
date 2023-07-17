@@ -61,6 +61,12 @@ class FFAppState extends ChangeNotifier {
   void deleteIsLoggedIn() {
     secureStorage.delete(key: 'ff_isLoggedIn');
   }
+
+  bool _isSyncLoading = false;
+  bool get isSyncLoading => _isSyncLoading;
+  set isSyncLoading(bool _value) {
+    _isSyncLoading = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {
