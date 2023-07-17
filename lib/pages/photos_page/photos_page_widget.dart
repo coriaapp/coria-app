@@ -1,8 +1,10 @@
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'photos_page_model.dart';
 export 'photos_page_model.dart';
@@ -72,7 +74,116 @@ class _PhotosPageWidgetState extends State<PhotosPageWidget> {
                     childAspectRatio: 1.0,
                   ),
                   scrollDirection: Axis.vertical,
-                  children: [],
+                  children: [
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.fade,
+                            child: FlutterFlowExpandedImageView(
+                              image: Image.network(
+                                'https://picsum.photos/seed/752/600',
+                                fit: BoxFit.contain,
+                              ),
+                              allowRotation: false,
+                              tag: 'imageTag1',
+                              useHeroAnimation: true,
+                            ),
+                          ),
+                        );
+                      },
+                      child: Hero(
+                        tag: 'imageTag1',
+                        transitionOnUserGestures: true,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.network(
+                            'https://picsum.photos/seed/752/600',
+                            width: 300.0,
+                            height: 200.0,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.fade,
+                            child: FlutterFlowExpandedImageView(
+                              image: Image.network(
+                                'https://picsum.photos/seed/867/600',
+                                fit: BoxFit.contain,
+                              ),
+                              allowRotation: false,
+                              tag: 'imageTag2',
+                              useHeroAnimation: true,
+                            ),
+                          ),
+                        );
+                      },
+                      child: Hero(
+                        tag: 'imageTag2',
+                        transitionOnUserGestures: true,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.network(
+                            'https://picsum.photos/seed/867/600',
+                            width: 300.0,
+                            height: 200.0,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.fade,
+                            child: FlutterFlowExpandedImageView(
+                              image: Image.network(
+                                'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+                                fit: BoxFit.contain,
+                              ),
+                              allowRotation: false,
+                              tag: 'imageTag3',
+                              useHeroAnimation: true,
+                            ),
+                          ),
+                        );
+                      },
+                      child: Hero(
+                        tag: 'imageTag3',
+                        transitionOnUserGestures: true,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.network(
+                            'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+                            width: 300.0,
+                            height: 200.0,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               );
             },

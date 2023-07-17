@@ -146,7 +146,7 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: FaIcon(
-              FontAwesomeIcons.allergies,
+              FontAwesomeIcons.weebly,
               size: 20.0,
             ),
             label: 'Home',

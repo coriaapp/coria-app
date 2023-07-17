@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_media_display.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
@@ -86,26 +85,15 @@ class _MediaDisplayWidgetState extends State<MediaDisplayWidget> {
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
-                    child: FlutterFlowMediaDisplay(
-                      path: '',
-                      imageBuilder: (path) => ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          path,
-                          width: 300.0,
-                          height: 300.0,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      videoPlayerBuilder: (path) => FlutterFlowVideoPlayer(
-                        path: path,
-                        width: 300.0,
-                        autoPlay: true,
-                        looping: true,
-                        showControls: true,
-                        allowFullScreen: true,
-                        allowPlaybackSpeedMenu: true,
-                      ),
+                    child: FlutterFlowVideoPlayer(
+                      path:
+                          'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+                      videoType: VideoType.network,
+                      autoPlay: true,
+                      looping: true,
+                      showControls: true,
+                      allowFullScreen: true,
+                      allowPlaybackSpeedMenu: false,
                     ),
                   ),
                 ),
