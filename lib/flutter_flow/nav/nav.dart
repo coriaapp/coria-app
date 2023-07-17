@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow_theme.dart';
 
 import '/backend/supabase/supabase.dart';
@@ -73,8 +74,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Photos',
           path: '/photos',
           builder: (context, params) => PhotosWidget(),
+        ),
+        FFRoute(
+          name: 'MediaDisplay',
+          path: '/mediaDisplay',
+          builder: (context, params) => MediaDisplayWidget(
+            mediauri: params.getParam('mediauri', ParamType.String),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {
