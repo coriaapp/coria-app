@@ -1,6 +1,9 @@
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
+import '/flutter_flow/flutter_flow_media_display.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_video_player.dart';
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -147,40 +150,28 @@ class _PhotosPageWidgetState extends State<PhotosPageWidget> {
                         ),
                       ),
                     ),
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        await Navigator.push(
-                          context,
-                          PageTransition(
-                            type: PageTransitionType.fade,
-                            child: FlutterFlowExpandedImageView(
-                              image: Image.network(
-                                'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-                                fit: BoxFit.contain,
-                              ),
-                              allowRotation: false,
-                              tag: 'imageTag3',
-                              useHeroAnimation: true,
-                            ),
-                          ),
-                        );
-                      },
-                      child: Hero(
-                        tag: 'imageTag3',
-                        transitionOnUserGestures: true,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Image.network(
-                            'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-                            width: 300.0,
-                            height: 200.0,
-                            fit: BoxFit.cover,
-                          ),
+                    FlutterFlowMediaDisplay(
+                      path: random_data.randomImageUrl(
+                        0,
+                        0,
+                      ),
+                      imageBuilder: (path) => ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.network(
+                          path,
+                          width: 300.0,
+                          height: 300.0,
+                          fit: BoxFit.cover,
                         ),
+                      ),
+                      videoPlayerBuilder: (path) => FlutterFlowVideoPlayer(
+                        path: path,
+                        width: 300.0,
+                        autoPlay: false,
+                        looping: true,
+                        showControls: true,
+                        allowFullScreen: true,
+                        allowPlaybackSpeedMenu: false,
                       ),
                     ),
                   ],
