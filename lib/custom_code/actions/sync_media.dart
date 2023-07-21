@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'index.dart'; // Imports other custom actions
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -25,5 +26,16 @@ Future syncMedia() async {
   final List<AssetPathEntity> paths =
       await PhotoManager.getAssetPathList(onlyAll: true);
 
-  print(paths);
+  final _totalEntitiesCount = await paths.first!.assetCountAsync;
+  final List<AssetEntity> entities = await paths.first!.getAssetListPaged(
+    page: 0,
+    size: 50,
+  );
+
+  // loop over entities and print their id & path
+  for (final entity in entities) {
+    print(entity);
+  }
+
+  print("Paths Count ${_totalEntitiesCount}");
 }
