@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_media_display.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
-import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -90,7 +89,7 @@ class _PhotosPageWidgetState extends State<PhotosPageWidget> {
                             type: PageTransitionType.fade,
                             child: FlutterFlowExpandedImageView(
                               image: Image.network(
-                                'https://picsum.photos/seed/752/600',
+                                '',
                                 fit: BoxFit.contain,
                               ),
                               allowRotation: false,
@@ -106,7 +105,7 @@ class _PhotosPageWidgetState extends State<PhotosPageWidget> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.network(
-                            'https://picsum.photos/seed/752/600',
+                            '',
                             width: 300.0,
                             height: 200.0,
                             fit: BoxFit.cover,
@@ -151,10 +150,7 @@ class _PhotosPageWidgetState extends State<PhotosPageWidget> {
                       ),
                     ),
                     FlutterFlowMediaDisplay(
-                      path: random_data.randomImageUrl(
-                        0,
-                        0,
-                      ),
+                      path: '',
                       imageBuilder: (path) => ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.network(

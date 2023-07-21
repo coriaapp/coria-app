@@ -81,6 +81,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => MediaDisplayWidget(
             mediauri: params.getParam('mediauri', ParamType.String),
           ),
+        ),
+        FFRoute(
+          name: 'storagePage',
+          path: '/storagePage',
+          builder: (context, params) => StoragePageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
