@@ -2,9 +2,9 @@ package io.flutter.plugins;
 
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
+import io.flutter.Log;
 
 import io.flutter.embedding.engine.FlutterEngine;
-import io.flutter.embedding.engine.plugins.shim.ShimPluginRegistry;
 
 /**
  * Generated file. Do not edit.
@@ -13,10 +13,67 @@ import io.flutter.embedding.engine.plugins.shim.ShimPluginRegistry;
  */
 @Keep
 public final class GeneratedPluginRegistrant {
+  private static final String TAG = "GeneratedPluginRegistrant";
   public static void registerWith(@NonNull FlutterEngine flutterEngine) {
-    ShimPluginRegistry shimPluginRegistry = new ShimPluginRegistry(flutterEngine);
-      io.flutter.plugins.firebaseauth.FirebaseAuthPlugin.registerWith(shimPluginRegistry.registrarFor("io.flutter.plugins.firebaseauth.FirebaseAuthPlugin"));
-    flutterEngine.getPlugins().add(new io.flutter.plugins.firebase.core.FirebaseCorePlugin());
-      io.flutter.plugins.googlesignin.GoogleSignInPlugin.registerWith(shimPluginRegistry.registrarFor("io.flutter.plugins.googlesignin.GoogleSignInPlugin"));
+    try {
+      flutterEngine.getPlugins().add(new com.llfbandit.app_links.AppLinksPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin app_links, com.llfbandit.app_links.AppLinksPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new com.it_nomads.fluttersecurestorage.FlutterSecureStoragePlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin flutter_secure_storage, com.it_nomads.fluttersecurestorage.FlutterSecureStoragePlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new io.flutter.plugins.pathprovider.PathProviderPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin path_provider_android, io.flutter.plugins.pathprovider.PathProviderPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new com.fluttercandies.photo_manager.PhotoManagerPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin photo_manager, com.fluttercandies.photo_manager.PhotoManagerPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin shared_preferences_android, io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new com.aboutyou.dart_packages.sign_in_with_apple.SignInWithApplePlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin sign_in_with_apple, com.aboutyou.dart_packages.sign_in_with_apple.SignInWithApplePlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new com.tekartik.sqflite.SqflitePlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin sqflite, com.tekartik.sqflite.SqflitePlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new io.flutter.plugins.urllauncher.UrlLauncherPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin url_launcher_android, io.flutter.plugins.urllauncher.UrlLauncherPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new io.flutter.plugins.videoplayer.VideoPlayerPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin video_player_android, io.flutter.plugins.videoplayer.VideoPlayerPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new creativemaybeno.wakelock.WakelockPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin wakelock, creativemaybeno.wakelock.WakelockPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new com.web3auth.flutter.web3auth_flutter.Web3AuthFlutterPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin web3auth_flutter, com.web3auth.flutter.web3auth_flutter.Web3AuthFlutterPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new io.flutter.plugins.webviewflutter.WebViewFlutterPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin webview_flutter_android, io.flutter.plugins.webviewflutter.WebViewFlutterPlugin", e);
+    }
   }
 }
