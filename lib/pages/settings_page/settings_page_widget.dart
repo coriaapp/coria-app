@@ -276,8 +276,9 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                                           child: Stack(
                                             children: [
                                               FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
+                                                onPressed: () async {
+                                                  context
+                                                      .pushNamed('storagePage');
                                                 },
                                                 text: '',
                                                 options: FFButtonOptions(
